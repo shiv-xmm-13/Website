@@ -1,70 +1,81 @@
-a{
-    Cursor:pointer;
-   }
-    body {
-    Font-family: Arial, sans-serif;
-    Line-height: 0;
-  }
-  header {
-    Background-color: #333;
-    Padding: 10px;
-    Font-size: 0;
-    Text-align: center;
-    Color: black;
-    Transition: color 0.5s;
-  }
+a {
+    cursor: pointer;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    width: 100%;
+}
+
+header {
+    background-color: #333;
+    padding: 10px;
+    font-size: 0;
+    text-align: center;
+    color: black;
+    transition: color 0.5s;
+}
+
+.container, .animation-container {
+    max-width: 100%;
+}
+
 .container {
-    Width: 100%;
-    Height: 100%;
-    Display: flex;
-    Flex-direction: column;
-    Justify-content: center;
-    Align-items: center;
-  }
-  
-  .avatar {
-    Width: 150px;
-    Height: 150px;
-    Box-sizing: border-box;
-    Border: 5px white solid;
-    Border-radius: 50%;
-    Overflow: hidden;
-    Box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-    Transform: translatey(0px);
-    Animation: float 6s ease-in-out infinite;
-  }
-  .avatar img {
-    Width: 100%;
-    Height: auto;
-  }
-  
-  
-  @keyframes float {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    border: 5px white solid;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+    animation: float 6s ease-in-out infinite;
+}
+
+.avatar img {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes float {
     0% {
-      Box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-      Transform: translatey(0px);
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
     }
     50% {
-      Box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
-      Transform: translatey(-20px);
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
     }
     100% {
-      Box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-      Transform: translatey(0px);
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
     }
-  }
+}
+
 header h1 {
-    Color: white;
-    Font-size: 50px;
-    Margin: 0;
-  }
-  .animation-container {
-    Display: block;
-    Position: relative;
-    Width: 800px;
-    Max-width: 100%;
-    Margin: 0 auto;
-  }
+    color: white;
+    font-size: 50px;
+    margin: 0;
+}
+
+.animation-container {
+    display: block;
+    position: relative;
+    width: 100%; /* Ensure responsiveness */
+    max-width: 800px;
+    margin: 0 auto;
+}
   .animation-container .lightning-container {
     Position: absolute;
     Top: 50%;
@@ -181,3 +192,87 @@ header h1 {
   .animation-container .boom-container.second .shape.circle {
     Animation-delay: 2.15s;
 }
+  @keyframes woosh {
+
+    0% {
+
+      Width: 12px;
+      Transform: translate(0px, 0px) rotate(-35deg);
+    }
+    15% {
+      Width: 50px;
+    }
+    30% {
+      Width: 12px;
+      Transform: translate(214px, -150px) rotate(-35deg);
+    }
+    30.1% {
+      Transform: translate(214px, -150px) rotate(46deg);
+    }
+    50% {
+      Width: 110px;
+    }
+    70% {
+      Width: 12px;
+      Transform: translate(500px, 150px) rotate(46deg);
+    }
+    70.1% {
+      Transform: translate(500px, 150px) rotate(-37deg);
+    }
+    85% {
+      Width: 50px;
+    }
+    100% {
+      Width: 12px;
+      Transform: translate(700px, 0) rotate(-37deg);
+    }
+  }
+  @keyframes boom-circle {
+    0% {
+      Opacity: 0;
+    }
+    5% {
+      Opacity: 1;
+    }
+    30% {
+      Opacity: 0;
+      Transform: scale(3);
+    }
+  }
+  @keyframes boom-triangle-big {
+    0% {
+      Opacity: 0;
+    }
+    5% {
+      Opacity: 1;
+    }
+    40% {
+      Opacity: 0;
+      Transform: scale(2.5) translate(50px, -50px) rotate(360deg);
+    }
+  }
+  @keyframes boom-triangle {
+    0% {
+      Opacity: 0;
+    }
+    5% {
+      Opacity: 1;
+    }
+    30% {
+      Opacity: 0;
+      Transform: scale(3) translate(20px, 40px) rotate(360deg);
+    }
+  }
+  @keyframes boom-disc {
+    0% {
+      Opacity: 0;
+    }
+    5% {
+      Opacity: 1;
+    }
+    40% {
+      Opacity: 0;
+      Transform: scale(2) translate(-70px, -30px);
+    }
+  
+  }
